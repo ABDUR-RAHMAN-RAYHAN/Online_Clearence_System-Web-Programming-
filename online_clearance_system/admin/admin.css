@@ -1,0 +1,716 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: rgb(15, 25, 45);
+    background: rgb(246, 247, 249);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+/* Login */
+.login-body {
+    min-height: 100vh;
+    background: rgb(246, 247, 249);
+    overflow: auto;
+}
+
+.login-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 45px;
+}
+
+.admin-icon {
+    width: 85px;
+    height: 85px;
+    background: rgb(0, 170, 75);
+    color: white;
+    border-radius: 15px;
+    font-size: 45px;
+    text-align: center;
+    line-height: 85px;
+}
+
+.login-system {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 28px;
+}
+
+.login-title {
+    color: rgb(0, 170, 75);
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.login-subtitle {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.login-card {
+    width: 450px;
+    background: white;
+    border-radius: 14px;
+    padding: 32px;
+    margin-top: 35px;
+    box-shadow: 2px 8px 22px lightgray;
+}
+
+.login-card input {
+    width: 100%;
+    margin-bottom: 13px;
+}
+
+.login-btn,
+.login-card button {
+    display: block;
+    width: 100%;
+    background: rgb(0, 170, 75);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.forgot,
+.back-link {
+    color: rgb(0, 170, 75);
+    text-align: center;
+    margin-top: 22px;
+}
+
+/* Main layout */
+.page {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.left {
+    width: 275px;
+    height: 100vh;
+    background: rgb(42, 101, 230);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 25px 20px;
+    background: rgb(38, 96, 220);
+}
+
+.profile-icon {
+    width: 45px;
+    height: 45px;
+    background: white;
+    color: rgb(32, 97, 241);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 45px;
+}
+
+.small-name {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 14px;
+    gap: 8px;
+}
+
+.nav-item {
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: rgb(25, 94, 245);
+}
+
+.bottom-nav {
+    margin-top: auto;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding: 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.right {
+    flex: 1;
+    height: 100vh;
+    background: rgb(246, 247, 249);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.top {
+    height: 65px;
+    background: white;
+    border-bottom: 1px solid rgb(220, 225, 230);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 35px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.top-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.top-icons {
+    word-spacing: 18px;
+    font-size: 22px;
+}
+
+.content,
+.admin-content,
+.profile-content {
+    padding: 30px 35px 50px 35px;
+}
+
+.welcome {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Cards and dashboard */
+.dash-grid,
+.admin-summary-grid,
+.reports-grid,
+.report-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.admin-summary-grid {
+    grid-template-columns: repeat(5, minmax(140px, 1fr));
+}
+
+.dash-card,
+.admin-summary-card,
+.report-card,
+.frontend-card,
+.activity,
+.admin-main-card,
+.main-card,
+.profile-box,
+.profile-action-card,
+.request-card,
+.info-box {
+    background: white;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 2px 3px 10px lightgray;
+    border-left: 4px solid transparent;
+    margin-top: 20px;
+}
+
+.dash-card {
+    min-height: 90px;
+}
+
+.dash-title,
+.section-title,
+.page-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.dash-text,
+.summary-number,
+.count-number,
+.report-card h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.small-text,
+.page-subtitle {
+    font-size: 14px;
+    color: rgb(65, 75, 95);
+}
+
+.card-icon,
+.small-card-icon,
+.doc-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 26px;
+}
+
+/* Tables */
+.table-box {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+    margin-top: 18px;
+}
+
+table,
+.admin-table,
+.profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+th,
+td,
+.admin-table th,
+.admin-table td,
+.profile-table th,
+.profile-table td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid rgb(220, 225, 230);
+    font-size: 14px;
+    vertical-align: top;
+}
+
+th,
+.admin-table th {
+    background: rgb(246, 247, 249);
+    font-weight: bold;
+}
+
+.table-form {
+    min-width: 170px;
+}
+
+.table-form select,
+.table-form textarea,
+table select,
+table textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 6px;
+    border: 1px solid rgb(190, 198, 210);
+    border-radius: 5px;
+}
+
+.table-form textarea,
+table textarea {
+    height: 58px;
+    resize: none;
+}
+
+.table-form button,
+table button {
+    background: rgb(32, 97, 241);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* Forms */
+.frontend-form,
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid rgb(200, 207, 216);
+    border-radius: 10px;
+    padding: 13px;
+    font-size: 15px;
+    width: 100%;
+}
+
+textarea {
+    height: 90px;
+    resize: none;
+}
+
+.settings-grid,
+.profile-grid-top,
+.profile-grid-bottom,
+.student-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.profile-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 30px;
+}
+
+/* Buttons */
+.blue-btn,
+.green-btn,
+.red-btn,
+.gray-btn,
+.orange-btn,
+.dark-btn,
+.small-btn,
+.print-btn,
+.white-btn {
+    color: white;
+    text-align: center;
+    border-radius: 7px;
+    padding: 10px 15px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.blue-btn,
+.small-btn,
+.print-btn {
+    background: rgb(32, 97, 241);
+}
+
+.green-btn {
+    background: rgb(0, 170, 75);
+}
+
+.red-btn {
+    background: red;
+}
+
+.orange-btn {
+    background: orangered;
+}
+
+.dark-btn {
+    background: rgb(54, 65, 82);
+}
+
+.gray-btn,
+.white-btn {
+    background: rgb(225, 228, 233);
+    color: rgb(15, 25, 45);
+}
+
+.full-btn {
+    display: block;
+    width: 100%;
+}
+
+.admin-bottom-buttons,
+.dash-button-row,
+.button-row,
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.admin-bottom-buttons a {
+    color: white;
+    text-align: center;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.admin-bottom-buttons a:nth-child(1) {
+    background: rgb(32, 97, 241);
+}
+
+.admin-bottom-buttons a:nth-child(2) {
+    background: orangered;
+}
+
+.admin-bottom-buttons a:nth-child(3) {
+    background: rgb(54, 65, 82);
+}
+
+/* Colors and status */
+.status {
+    padding: 7px 13px;
+    border-radius: 18px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.green {
+    background: rgb(210, 250, 225);
+    color: green;
+}
+
+.yellow {
+    background: rgb(255, 245, 180);
+    color: rgb(160, 105, 0);
+}
+
+.red {
+    background: rgb(255, 220, 220);
+    color: rgb(180, 0, 0);
+}
+
+.blue-box {
+    background: rgb(218, 232, 255);
+    color: rgb(32, 97, 241);
+}
+
+.green-box {
+    background: rgb(215, 249, 225);
+    color: rgb(0, 170, 75);
+}
+
+.purple-box {
+    background: rgb(238, 222, 255);
+    color: rgb(160, 40, 245);
+}
+
+.orange-box {
+    background: rgb(255, 236, 206);
+    color: orangered;
+}
+
+.red-box {
+    background: rgb(255, 222, 225);
+    color: red;
+}
+
+.teal-box {
+    background: rgb(197, 250, 238);
+    color: teal;
+}
+
+.blue-left {
+    border-left-color: rgb(32, 97, 241);
+}
+
+.green-left {
+    border-left-color: rgb(0, 170, 75);
+}
+
+.purple-left {
+    border-left-color: rgb(160, 40, 245);
+}
+
+.orange-left {
+    border-left-color: orangered;
+}
+
+.red-left {
+    border-left-color: red;
+}
+
+.teal-left {
+    border-left-color: teal;
+}
+
+.success-message {
+    background: rgb(210, 250, 225);
+    color: green;
+    padding: 11px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.login-message {
+    background: rgb(255, 220, 220);
+    color: rgb(180, 0, 0);
+    padding: 11px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.uploaded-badge {
+    background: rgb(210, 250, 225);
+    color: green;
+    padding: 7px 12px;
+    border-radius: 18px;
+    display: inline-block;
+    font-size: 13px;
+}
+
+/* Certificate and success page */
+.success-card {
+    width: 650px;
+    background: white;
+    border-radius: 14px;
+    padding: 32px;
+    margin: 0 auto;
+    box-shadow: 2px 8px 22px lightgray;
+    text-align: center;
+}
+
+.success-icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: rgb(210, 250, 225);
+    color: green;
+    font-size: 44px;
+    line-height: 76px;
+    margin: 0 auto 18px auto;
+    font-weight: bold;
+}
+
+.details-box,
+.success-info,
+.certificate-preview-box {
+    background: rgb(246, 247, 249);
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 22px;
+    text-align: left;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(225, 228, 233);
+    padding: 10px 0;
+    font-size: 15px;
+}
+
+.print-certificate-area {
+    display: none;
+}
+
+.real-certificate,
+.certificate-box {
+    width: 850px;
+    min-height: 600px;
+    background: white;
+    border: 8px double rgb(32, 97, 241);
+    padding: 55px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.real-certificate h1,
+.certificate-box h1 {
+    color: rgb(32, 97, 241);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.certificate-sign-row,
+.certificate-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.signature-line {
+    width: 220px;
+    height: 1px;
+    background: black;
+    margin-bottom: 8px;
+}
+
+/* Small helper classes */
+.red-heading {
+    color: red;
+}
+
+.emergency-card table th {
+    background: rgb(255, 240, 240);
+}
+
+.no-shadow {
+    box-shadow: none;
+    padding: 0;
+}
+
+.info-box ul,
+.success-info ul {
+    margin-left: 20px;
+    line-height: 28px;
+}
+
+li {
+    margin: 8px 0;
+}
+
+/* Responsive and print */
+@media (max-width: 1200px) {
+    .admin-summary-grid,
+    .dash-grid,
+    .reports-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-bottom-buttons,
+    .settings-grid,
+    .profile-grid-top,
+    .profile-grid-bottom {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    .left,
+    .top,
+    .welcome,
+    .print-btn,
+    .success-card,
+    .certificate-control {
+        display: none;
+    }
+
+    .right {
+        height: auto;
+        background: white;
+    }
+
+    .content {
+        padding: 0;
+    }
+
+    .print-certificate-area {
+        display: block;
+    }
+}
